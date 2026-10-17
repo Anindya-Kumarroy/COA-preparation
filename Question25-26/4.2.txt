@@ -1,0 +1,22 @@
+
+4(ii) What is the role of program control instructions? Provide two examples of instructions used for program control.
+
+=> Role of Program Control Instructions :
+
+Definition: Program control instructions are used to change the normal sequence of execution of a program. They control the flow of instructions by changing the Program Counter (PC).
+
+Roles of Program Control Instructions:
+
+1. They change the sequence of program execution.
+2. They transfer control to another instruction or memory location.
+3. They are used for decision-making and looping.
+4. They help execute instructions conditionally or unconditionally.
+
+
+Two Examples:
+
+1. JUMP: Transfers program control to another memory location.
+2. BRANCH: Changes the sequence of execution based on a specified condition.
+
+
+Conclusion: Program control instructions help a computer execute instructions in the required order and perform conditional operations.
