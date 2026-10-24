@@ -1,0 +1,37 @@
+5.(ii).What is computer organisation? Discuss its importance in understanding the internal working of a computer system. How does computer organisation relate to computer architecture?
+
+
+Computer Organisation and Its Importance:
+
+1.Definition:
+Computer organisation refers to the operational units of a computer and their interconnections that implement computer architecture. It explains how different hardware components work together to execute instructions.
+
+Main components: CPU (ALU, Control Unit, and registers), memory hierarchy, input/output system, and system bus (data, address, and control buses).
+
+2.Importance of Computer Organisation:
+
+1. Internal Working: Explains how different hardware components work together.
+2. Instruction Execution: Explains how the CPU fetches, decodes, and executes instructions.
+3. Performance Improvement: Helps improve computer speed using cache memory and pipelining.
+4. Memory Management: Explains how data and instructions are stored and transferred.
+5. Hardware Design: Helps design efficient computer systems.
+6. Troubleshooting: Helps identify and solve hardware problems.
+
+3. Relationship Between Computer Architecture and Computer Organisation:
+
+Computer Architecture                                                                                                       Computer Organisation
+	                                                                                                                   
+Describes what a computer does.	                                                                                            Describes how a computer works internally.
+Includes instruction sets and addressing modes.	                                                                            Includes registers, buses, and control signals.
+Focuses on programmer-visible features.	                                                                                    Focuses on hardware implementation.
+Computer architecture defines the functional specifications.                                                                Computer organisation explains how these specifications are implemented using hardware.
+Architecture is the blueprint.                                                                                              Organisation is the construction of the building from that blueprint.
+
+4.One Architecture, Many Organisations:
+The same architecture can be implemented using different organisations. For example, Intel and AMD processors can support the same x86 instruction set but use different internal hardware designs to achieve different performance levels.
+
+5. Example of an ADD Instruction:
+When executing an ADD instruction, the architecture defines the operation to be performed, while computer organisation explains how registers supply data to the ALU, how the addition is performed, and how the result is stored.
+
+6. Conclusion:
+Computer architecture defines what a computer does, whereas computer organisation explains how it does it. Both are essential for designing efficient and high-performance computer systems.

@@ -1,0 +1,84 @@
+
+7.(a) What is instruction cycle? Describe with the help of flowchart.
+
+=>Instruction Cycle
+Definition: The instruction cycle is the sequence of steps performed by the CPU to fetch, decode, and execute an instruction stored in memory.
+
+Flowchart:
+
+        START
+          │
+          ▼
+ ┌──────────────────┐
+ │ FETCH            │◄────────┐
+ │ MAR ← PC         │         │
+ │ MDR ← Memory[MAR]│         │
+ │ IR ← MDR         │         │
+ │ PC ← PC + 1      │         │
+ └────────┬─────────┘         │
+          ▼                   │
+ ┌──────────────────┐         │
+ │ DECODE           │         │
+ │ Control Unit reads│        │
+ │ opcode from IR   │         │
+ └────────┬─────────┘         │
+          ▼                   │
+ ┌──────────────────┐         │
+ │ EXECUTE          │         │
+ │ ALU / Memory / IO│         │
+ └────────┬─────────┘         │
+          ▼                   │
+ ┌──────────────────┐         │
+ │ STORE RESULT     │         │
+ │ Register / Memory│         │
+ └────────┬─────────┘         │
+          ▼                   │
+   More instructions? ── Yes ─┘
+          │ No
+          ▼
+         STOP
+
+Steps of Instruction Cycle
+1. Fetch: The CPU fetches the next instruction from memory using the Program Counter (PC).
+2. Decode: The Control Unit decodes the instruction and determines the required operation.
+3. Execute: The CPU performs the operation using the ALU or other hardware units.
+4. Store: The result is stored in a register or memory, if required.
+5. Repeat: The CPU fetches and executes the next instruction until the program is completed.
+Conclusion: The instruction cycle is the basic process through which the CPU executes program instructions one by one.
+
+
+
+
+(b) i. How many 128 x 8 bit RAM chips are needed to provide a memory capacity of 2048 bytes?
+
+=> Number of chips = Total memory required ÷ Capacity of one chip
+= 2048 bytes ÷ 128 bytes
+= 16 chips
+
+ii. how many lines of the address bus must be used to access 2048 bytes of memory?
+
+=>Number of address lines = log₂(2048) = log₂(2¹¹) = 11 lines
+
+
+iii. how many line s must be decoded for chip select and specify the size of decoder?
+
+=>Total address lines = 11
+Lines used inside each chip = 7 (since 2⁷ = 128)
+Lines to be decoded for chip select = 11 − 7 = 4 lines
+
+(c) Write down short note on Virtual memory.
+=>Short Note on Virtual Memory
+Definition: Virtual memory is a memory management technique that allows a computer to run programs larger than the available physical RAM by using a part of secondary storage (HDD or SSD) as an extension of RAM.
+
+Working Principle:
+1. The operating system divides virtual memory into pages.
+2. Only the required pages are loaded into RAM.
+3. The remaining pages stay on the HDD or SSD.
+4. When a required page is not in RAM, a page fault occurs, and the operating system loads that page into RAM.
+Advantages:
+1. It allows large programs to run with limited RAM.
+2. It supports multitasking.
+3. It improves memory utilization.
+Conclusion: Virtual memory helps a computer run large programs efficiently, even when physical RAM is limited.
+
+

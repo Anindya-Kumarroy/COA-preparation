@@ -1,0 +1,100 @@
+
+6.(i).a.Describe floating-point representation in computers.
+
+
+
+=>FLOATING-POINT REPRESENTATION:
+
+Definition:
+Floating-point representation is a method of representing real numbers,
+including very large and very small numbers, in a computer.
+
+Main Parts:
+1. Sign bit (S): 0 means positive, 1 means negative.
+2. Exponent (E): Biased exponent, it determines the position of the binary point.
+3. Mantissa (Significand): Stores the significant digits of the number.
+
+Formula:
+x = (-1)^s * (1.f)2 * 2^(E - bias)
+
+Normalisation:
+The number is stored in the form 1.f. The leading 1 is not stored
+(hidden bit).
+
+IEEE 754 Standard:
+
+                 Sign    Exponent    Fraction    Bias
+Single (32-bit)  1 bit   8 bits      23 bits     127
+Double (64-bit)  1 bit   11 bits     52 bits     1023
+
+Example: Represent -13.25 in 32-bit format
+
+Step 1: Sign = 1 (negative number)
+Step 2: 13.25 = 1101.01 (binary)
+Step 3: Normalise: 1101.01 = 1.10101 * 2^3
+Step 4: Exponent: E = 3 + 127 = 130 = 10000010 (binary)
+Step 5: Fraction = 10101 followed by zeros, to make 23 bits
+        = 10101000000000000000000
+
+Result (32-bit):
+Sign | Exponent   | Fraction
+1    | 10000010   | 10101000000000000000000
+
+Special Values:
+- Exponent all 0s: zero or de-normal numbers
+- Exponent all 1s: infinity or NaN
+
+Advantages:
+- Provides a wide range of values.
+- Useful for scientific calculations, graphics and engineering applications.
+
+Disadvantage:
+- Rounding errors occur (for example, 0.1 cannot be stored exactly).
+
+
+
+
+
+b. Represent the number 24.25 in the IEEE 754 in both formats.
+
+
+=>24.25 in IEEE 754:
+
+Step 1: Convert to binary:
+Whole part: 24 = 11000
+Fraction part: 0.25 = .01 (because 0.25 = 1/4)
+So 24.25 = 11000.01
+
+Step 2: Normalise:
+Move the point so only one 1 is before it:
+11000.01 = 1.100001 × 2⁴
+Sign = positive, so sign bit = 0
+Exponent = 4
+
+step 3:
+Mantissa (the part after the point) = 100001
+
+Single precision (32-bit):
+Format: 1 sign bit, 8 exponent bits, 23 mantissa bits. Bias = 127.
+Stored exponent = 4 + 127 = 131 = 10000011
+Mantissa = 100001 followed by zeros to fill 23 bits: 10000100000000000000000
+
+Result:
+sign   | Exponent | Fraction
+0      | 10000011 | 10000100000000000000000
+
+Hex: 0x41C20000
+
+Double precision (64-bit)
+
+Format: 1 sign bit, 11 exponent bits, 52 mantissa bits. Bias = 1023.
+
+Stored exponent = 4 + 1023 = 1027 = 10000000011
+Mantissa = 100001 followed by zeros to fill 52 bits: 1000010000000000000000000000000000000000000000000000
+
+Result:
+
+sign | Exponent    | Fraction
+0    | 10000000011 | 1000010000000000000000000000000000000000000000000000
+
+Hex: 0x4038400000000000
