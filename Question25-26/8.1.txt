@@ -1,0 +1,53 @@
+8(a) Flynn’s Classification of Computer Architectures.
+
+=>Definition: Flynn’s classification is a method of classifying computer architectures based on
+the number of instruction streams and data streams processed simultaneously.
+
+There are four categories:
+
+1. SISD (Single Instruction, Single Data)
+- A single processor executes one instruction stream on one data stream.
+- It processes one instruction at a time.
+- Example: Traditional single-core computer.
+
+2. SIMD (Single Instruction, Multiple Data)
+- Multiple processing units execute the same instruction on different data simultaneously.
+- It is useful for image processing and scientific calculations.
+- Example: GPU (Graphics Processing Unit).
+
+3. MISD (Multiple Instruction, Single Data)
+- Multiple processing units execute different instructions on the same data stream.
+- It is rarely used in general-purpose computers.
+- Example: Certain fault-tolerant systems.
+
+4. MIMD (Multiple Instruction, Multiple Data)
+- Multiple processors execute different instructions on different data simultaneously.
+- It supports parallel processing.
+- Example: Multicore processors and multiprocessor systems.
+
+Conclusion: Flynn’s classification helps us understand how computer systems process instructions and data.
+
+8(b) Classification of Pipeline Processors 
+
+=>Definition: A pipeline processor divides a task into several stages so that 
+multiple instructions or operations can be processed simultaneously at different stages.
+
+Pipeline processors are mainly classified into two types:
+
+1. Instruction Pipeline
+- It divides instruction execution into several stages.
+- Different instructions are processed simultaneously in different stages.
+- Common stages include Fetch, Decode, Execute, and Write Back.
+- Example: A CPU executing multiple instructions using pipelining.
+
+2. Arithmetic Pipeline
+- It divides an arithmetic operation into several stages.
+- Different data items can be processed simultaneously through these stages.
+- It is commonly used for floating-point arithmetic.
+- Example: Pipelined floating-point addition and multiplication.
+
+Other classification: Based on the number of instruction streams, pipeline processors may also be classified as:
+- Unifunction pipeline: Performs one specific function.
+- Multifunction pipeline: Performs different functions by changing its configuration.
+
+Conclusion: Pipelining increases processor throughput by allowing overlapping execution of instructions or arithmetic operations.

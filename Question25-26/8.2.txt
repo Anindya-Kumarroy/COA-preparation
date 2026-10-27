@@ -1,0 +1,50 @@
+8(II): Define pipeline hazard and elaborate on the different types of pipeline hazards
+ with examples of how they can occur and potential solutions to mitigate them.
+
+=> Answer:
+1. Definition of Pipeline Hazard:
+A pipeline hazard is a situation in which the next instruction cannot execute in its 
+expected clock cycle because of some problem in the pipeline. It may cause delays and 
+reduce CPU performance.
+There are three main types of pipeline hazards.
+
+2. Types of Pipeline Hazards:
+
+1. Structural Hazard:
+A structural hazard occurs when two or more instructions need the same hardware resource
+at the same time.
+Example: Two instructions try to access the same memory simultaneously.
+Solution:
+- Use separate instruction and data memory.
+- Add more hardware resources.
+- Stall the pipeline until the resource becomes available.
+
+2. Data Hazard
+A data hazard occurs when an instruction depends on the result of a previous instruction 
+that has not yet been completed.
+Example:
+I1: ADD R1, R2, R3
+I2: SUB R4, R1, R5
+Here, I2 needs the value of R1 produced by I1.
+Solution:
+- Use data forwarding (bypassing).
+- Insert stalls or pipeline bubbles.
+- Use instruction scheduling to rearrange instructions.
+
+
+3. Control Hazard
+A control hazard occurs when the pipeline does not know which instruction to execute next
+because of a branch or jump instruction.
+Example:
+I1: BEQ R1, R2, LABEL
+I2: ADD R3, R4, R5
+If the branch is taken, I2 may be the wrong instruction.
+Solution:
+- Use branch prediction.
+- Resolve branch conditions earlier.
+- Flush incorrect instructions from the pipeline.
+
+3. Conclusion:
+Pipeline hazards can reduce the speed and efficiency of a CPU. Techniques such as forwarding,
+stalling, adding hardware resources, and branch prediction help reduce their effects and improve
+pipeline performance.

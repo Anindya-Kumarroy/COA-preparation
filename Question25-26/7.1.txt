@@ -6,7 +6,7 @@ Definition: The instruction cycle is the sequence of steps performed by the CPU 
 
 Flowchart:
 
-        START
+        START                  
           │
           ▼
  ┌──────────────────┐
@@ -18,9 +18,9 @@ Flowchart:
  └────────┬─────────┘         │
           ▼                   │
  ┌──────────────────┐         │
- │ DECODE           │         │
- │ Control Unit reads│        │
- │ opcode from IR   │         │
+ │DECODE            │         │
+ │Control unit reads│         │
+ │opcode from IR    │         │
  └────────┬─────────┘         │
           ▼                   │
  ┌──────────────────┐         │
@@ -60,15 +60,17 @@ ii. how many lines of the address bus must be used to access 2048 bytes of memor
 =>Number of address lines = log₂(2048) = log₂(2¹¹) = 11 lines
 
 
-iii. how many line s must be decoded for chip select and specify the size of decoder?
+iii. how many lines must be decoded for chip select and specify the size of decoder?
 
 =>Total address lines = 11
 Lines used inside each chip = 7 (since 2⁷ = 128)
 Lines to be decoded for chip select = 11 − 7 = 4 lines
 
 (c) Write down short note on Virtual memory.
-=>Short Note on Virtual Memory
-Definition: Virtual memory is a memory management technique that allows a computer to run programs larger than the available physical RAM by using a part of secondary storage (HDD or SSD) as an extension of RAM.
+
+=>Short Note on Virtual Memory:
+Definition: Virtual memory is a memory management technique that allows a computer to run programs larger than the available 
+physical RAM by using a part of secondary storage (HDD or SSD) as an extension of RAM.
 
 Working Principle:
 1. The operating system divides virtual memory into pages.
@@ -78,7 +80,19 @@ Working Principle:
 Advantages:
 1. It allows large programs to run with limited RAM.
 2. It supports multitasking.
-3. It improves memory utilization.
+3. It improves memory utilisation.
 Conclusion: Virtual memory helps a computer run large programs efficiently, even when physical RAM is limited.
+
+
+
+
+
+
+
+
+
+
+
+
 
 

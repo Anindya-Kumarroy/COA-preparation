@@ -4,15 +4,18 @@
 
 => Direct Memory Access (DMA):
 
-Definition: Direct Memory Access (DMA) is a technique that allows an I/O device to transfer data directly to or from main memory without the continuous involvement of the CPU.
+Definition: Direct Memory Access (DMA) is a technique that allows an I/O device to transfer data directly to or 
+from main memory without the continuous involvement of the CPU.
 
 Basic Working Principle of DMA:
 
-1. CPU Initialisation : The CPU provides the DMA controller with the starting memory address, the amount of data to transfer and the transfer direction.
+1. CPU Initialisation : The CPU provides the DMA controller with the starting memory address, the amount of data
+ to transfer and the transfer direction.
 
 2. Request for Bus: The DMA controller requests control of the system bus from the CPU.
 
-3. Data Transfer: After getting control of the bus, the DMA controller transfers data directly between the I/O device and main memory.
+3. Data Transfer: After getting control of the bus, the DMA controller transfers data directly between the I/O
+ device and main memory.
 
 4. Completion: After the transfer is complete, the DMA controller sends an interrupt signal to the CPU.
 

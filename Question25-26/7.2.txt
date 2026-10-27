@@ -1,0 +1,147 @@
+7.2.(a) Write down the differences between daisy chaining and polling.
+
+DIFFERENCES BETWEEN DAISY CHAINING AND POLLING 
+
+DEFINITION:
+Daisy chaining and polling are two methods used to identify which
+I/O device requires service when multiple devices request an
+interrupt.
+
+COMPARISON TABLE
+
++----+------------------------------------+------------------------------------+
+| No | DAISY CHAINING                     | POLLING                            |
++----+------------------------------------+------------------------------------+
+| 1  | It uses a serial hardware          | It uses a program or software to   |
+|    | connection to identify the         | identify the requesting device.    |
+|    | requesting device.                 |                                    |
++----+------------------------------------+------------------------------------+
+| 2  | The interrupt signal passes        | The CPU checks devices one by one  |
+|    | through devices one by one.        | to find the requesting device.     |
++----+------------------------------------+------------------------------------+
+| 3  | Device priority depends on its     | Priority depends on the order in   |
+|    | position in the chain.             | which the CPU checks devices.      |
++----+------------------------------------+------------------------------------+
+| 4  | It requires less software          | It requires more CPU time to check |
+|    | overhead.                          | the devices.                       |
++----+------------------------------------+------------------------------------+
+| 5  | It is generally faster when the    | Its speed depends on the number of |
+|    | requesting device is near the      | devices and their checking order.  |
+|    | beginning of the chain.            |                                    |
++----+------------------------------------+------------------------------------+
+
+
+(b)Discuss associative memory with proper diagram.
+
+=>⇒ Associative memory is a type of memory in which data is accessed by its content rather than by its address. It is also called Content Addressable Memory (CAM).
+
+In normal memory, we give an address and get the data stored at that address.
+
+In associative memory, we give a search key/content, and the memory searches all stored words simultaneously and then returns the matching word or its location.
+
+Associative Memory Mechanism:
+The basic mechanism has 3 main operations:
+(i) Read/search
+(ii) Write
+(iii) Match/compare
+
+1. Search Operation:
+Suppose each memory word has 4 bits:
+
+Memory
+1010
+1101
+1011
+0110
+
+search word = 1011
+The associative memory compares it with all memory words simultaneously.
+1010 → No match
+1101 → No match
+1011 → Match
+0110 → No match
+
+The match register becomes: 0010
+
+2. Comparison Mechanism:
+Each bit of the search word is compared with the corresponding bit of every stored word.
+
+For two bits A and B, an XNOR operation can be used:
+A XNOR B = 1 → bits are equal
+A XNOR B = 0 → bits are different
+
+3. Masking/Key mechanism:
+Sometimes we don't want to compare all bits. A mask/key can specify which bits should participate in the comparison.
+
+Example:
+Search word: 1011
+Key: 1100
+
+Here, only 1st two bits may be considered.
+
+4. Read Operation:
+After the comparison is completed, the Match Register tells us which memory location contains matching data.
+
+For example:
+Memory word    Match
+1010           0
+1101           0
+1011           1
+0110           0
+
+The control circuit identifies the matching location and the corresponding data can be read.
+
+5. Write Operation:
+Writing in associative memory is similar to writing in conventional memory.
+
+For example:
+Write data = 1100,
+Location = 101
+
+The word 1100 is stored at that location.
+
+Diagram:
+
+
+                 ASSOCIATIVE MEMORY
+             (Content Addressable Memory)
+                       |
+                       v
+              +-------------------+
+              |   Search Argument |
+              |   (Input Data)    |
+              +-------------------+
+                       |
+                       v
+              +-------------------+
+              |   Argument        |
+              |   Register (A)    |
+              +-------------------+
+                       |
+                       v
+        +--------------------------------+
+        |       ASSOCIATIVE MEMORY       |
+        |                                |
+        |  +--------------------------+  |
+        |  | Memory Word 1            |  |
+        |  +--------------------------+  |
+        |  | Memory Word 2            |  |
+        |  +--------------------------+  |
+        |  | Memory Word 3            |  |
+        |  +--------------------------+  |
+        |  | Memory Word 4            |  |
+        |  +--------------------------+  |
+        |                                |
+        +--------------------------------+
+                       |
+                       v
+              +-------------------+
+              |   Match Register  |
+              |      (M)          |
+              +-------------------+
+                       |
+                       v
+              +-------------------+
+              | Matching Word     |
+              |   / Output        |
+              +-------------------+
